@@ -7,22 +7,27 @@ import {
   useDisclosure,
   Stack,
   Link as ChakraLink,
+  Image
 } from "@chakra-ui/react";
 
 import { Link } from "react-router-dom";
 import { FaBars, FaTimes, FaSun, FaMoon } from "react-icons/fa"; // 👈 react-icons
+import logo from "../assets/logo_pidiLa.png"
 
 export default function NavBar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Box bg="teal.500" px={4}>
+    <Box bg="#383733" px={4}>
       <Flex h={16} alignItems="center" justifyContent="space-between">
         {/* LOGO */}
-        <Box textStyle="logo">
+        {/* <Box textStyle="logo">
           Pidi la
-        </Box>
+        </Box> */}
+        <Link to="/">
+         <Image src={logo} alt="Logo" boxSize="60px" />
+        </Link>
 
         {/* LINKS (desktop) */}
         <Flex
@@ -47,13 +52,16 @@ export default function NavBar() {
         {/* BOTÕES */}
         <Flex alignItems="center" gap={2}>
           {/* Botão Mesa */}
-          <Button
+          {/* <Button
             as={Link}
             to="/Reservations"
             colorScheme="yellow"
             size="sm"
           >
             Mesa
+          </Button> */}
+          <Button variant="mesa" as={Link} to="/Reservations">
+           Reservar Mesa
           </Button>
 
           {/* Toggle light/dark */}

@@ -1,15 +1,15 @@
 export const textStyles = {
   body: {
-    fontFamily: "Inter, sans-serif",
+    fontFamily: "Work Sans, sans-serif",
     fontWeight: "500",
-    fontSize: "16px",
+    fontSize: "20px",
     lineHeight: "24px",
     letterSpacing: "0",
     textDecoration: "none",
     textTransform: "none",
   },
   heading: {
-    fontFamily: "Inter, sans-serif",
+    fontFamily: "Work Sans, sans-serif",
     fontWeight: "700",
     fontSize: "28px",
     lineHeight: "32px",
@@ -23,5 +23,16 @@ export const textStyles = {
     letterSpacing: "0",
     color: "#e66c30"
 
-  }
+  },
+  slogan: {
+    description: "Slogan especial do restaurante",
+    value: {
+      fontFamily: "Work Sans, sans-serif",
+      fontWeight: "600",
+      fontSize: "34px",
+      lineHeight: "26px",
+      letterSpacing: "-0.01em",
+      textAlign: "center",
+    },
+  },
 };

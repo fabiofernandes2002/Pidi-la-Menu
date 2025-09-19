@@ -1,19 +1,107 @@
-import { Box, Heading, Text } from "@chakra-ui/react"
+import {
+  Box,
+  Heading,
+  Text,
+  Highlight,
+  Button,
+  HStack,
+} from "@chakra-ui/react";
+import { useState } from "react";
+import Starters from "../components/categories/Starters"; // Entradas
+// importa também os outros componentes das categorias quando os criares
+// import PratosCarne from "../components/categories/PratosCarne";
+// import PratosPeixe from "../components/categories/PratosPeixe";
+// import PequenoAlmoco from "../components/categories/PequenoAlmoco";
+// import Sobremesas from "../components/categories/Sobremesas";
+// import Vinhos from "../components/categories/Vinhos";
+// import Bebidas from "../components/categories/Bebidas";
+
+// Formulário de reservas
+import ReservationForm from "../components/ReservationForm";
 
 export default function Home() {
+  const [categoria, setCategoria] = useState("entradas");
+
+  const categorias = [
+    { id: "entradas", label: "Entradas" },
+    { id: "carne", label: "Pratos de Carne" },
+    { id: "peixe", label: "Pratos de Peixe" },
+    { id: "pequeno", label: "Pequeno Almoço" },
+    { id: "sobremesas", label: "Sobremesas" },
+    { id: "vinhos", label: "Vinhos" },
+    { id: "bebidas", label: "Bebidas" },
+  ];
+
   return (
-    <Box p={8}>
+    <Box p={8} textAlign="center">
+      {/* Hero */}
       <Heading textStyle="heading" mb={4}>
-        Bem-vindo ao Pidi-la Menu
+        Pidi-la Menu
       </Heading>
-      <Text textStyle="body" mb={2}>
-        Esta é a página inicial. Aqui você pode explorar o nosso menu,
-        fazer reservas e entrar em contato.
+
+      <Text textStyle="body" mb={4} maxW="1000px" color="#383733" mx="auto">
+        Descubra a nossa viagem culinária através de sabores autênticos
+        e ingredientes de alta qualidade
       </Text>
-      <Text textStyle="body">
-        Use a navbar para navegar entre as páginas: Menu, Sobre, Reservas e
-        Contacto.
+
+      <Text textStyle="body" fontWeight="600" color="#383733" mt={4}>
+        <Highlight
+          query="cabo-verdiana"
+          styles={{
+            px: "2",
+            py: "1",
+            rounded: "full",
+            bg: "#e76d30",
+            color: "white",
+          }}
+        >
+          Mesa cabo-verdiana: sabores que juntam famílias
+        </Highlight>
       </Text>
+
+      {/* Botões de categorias */}
+      <HStack spacing={4} justify="center" mt={10} wrap="wrap">
+        {categorias.map((cat) => (
+          <Button
+            key={cat.id}
+            variant="category"
+            onClick={() => setCategoria(cat.id)}
+            bg={categoria === cat.id ? "#e76d30" : "transparent"}
+            color={categoria === cat.id ? "white" : "teal.900"}
+           _hover={{
+             bg: "#e76d30",
+             color: "white",
+            }}
+          >
+            {cat.label}
+          </Button>
+
+        ))}
+      </HStack>
+
+      {/* Renderização condicional da categoria */}
+      <Box mt={10}>
+        {categoria === "entradas" && <Starters />}
+        {/* {categoria === "carne" && <PratosCarne />} */}
+        {/* {categoria === "peixe" && <PratosPeixe />} */}
+        {/* {categoria === "pequeno" && <PequenoAlmoco />} */}
+        {/* {categoria === "sobremesas" && <Sobremesas />} */}
+        {/* {categoria === "vinhos" && <Vinhos />} */}
+        {/* {categoria === "bebidas" && <Bebidas />} */}
+      </Box>
+      
+      {/* Formulário de reservas */}
+      <Box mt={16}>
+        <Heading textStyle="heading" mb={4}>
+          Reserve a sua mesa
+        </Heading>
+        <Text textStyle="body" mb={6} maxW="1000px" mx="auto">
+          Reserve a sua experiência gastronómica no Pidi-la e desfrute da nossa cozinha autêntica
+          num ambiente acolhedor e hospitaleiro.
+        </Text>
+        <ReservationForm />
+      </Box>
+
     </Box>
-  )
+  );
 }
