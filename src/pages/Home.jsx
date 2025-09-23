@@ -5,6 +5,7 @@ import {
   Highlight,
   Button,
   HStack,
+  Divider,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import Starters from "../components/categories/Starters"; // Entradas
@@ -29,7 +30,7 @@ export default function Home() {
     { id: "pequeno", label: "Pequeno Almoço" },
     { id: "sobremesas", label: "Sobremesas" },
     { id: "vinhos", label: "Vinhos" },
-    { id: "bebidas", label: "Bebidas" },
+    { id: "sumos", label: "Sumos" },
   ];
 
   return (
@@ -78,7 +79,7 @@ export default function Home() {
 
         ))}
       </HStack>
-
+      <Divider orientation='horizontal' mt={10} borderColor="#e76d30" />
       {/* Renderização condicional da categoria */}
       <Box mt={10}>
         {categoria === "entradas" && <Starters />}
@@ -91,15 +92,17 @@ export default function Home() {
       </Box>
       
       {/* Formulário de reservas */}
-      <Box mt={16}>
-        <Heading textStyle="heading" mb={4}>
+      <Box mt={16} bg="#ffedce" w="full">
+        <Box>
+          <Heading textStyle="heading" mb={4}>
           Reserve a sua mesa
-        </Heading>
-        <Text textStyle="body" mb={6} maxW="1000px" mx="auto">
-          Reserve a sua experiência gastronómica no Pidi-la e desfrute da nossa cozinha autêntica
-          num ambiente acolhedor e hospitaleiro.
-        </Text>
-        <ReservationForm />
+          </Heading>
+          <Text textStyle="body" mb={6} maxW="1000px" mx="auto">
+            Reserve a sua experiência gastronómica no Pidi-la e desfrute da nossa cozinha autêntica
+            num ambiente acolhedor e hospedeiro.
+          </Text>
+          <ReservationForm />
+        </Box>
       </Box>
 
     </Box>

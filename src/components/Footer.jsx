@@ -4,7 +4,7 @@ import { FaInstagram} from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <Box bg="teal.500" color="white" py={12} px={8}>
+    <Box bg="#d79771" color="white" py={12} px={8}>
       <Stack
         direction={{ base: "column", md: "row" }}
         spacing={{ base: 8, md: 16 }}
@@ -25,7 +25,7 @@ export default function Footer() {
         <VStack align="flex-start" spacing={2}>
           <Heading textStyle="heading" size="md">Contactos</Heading>
           <Text textStyle="body" fontSize="sm">📞 215885872</Text>
-          <Text textStyle="body" fontSize="sm">📧 info@pidila.com</Text>
+          <Text textStyle="body" fontSize="sm">📧 info@pidila.pt</Text>
           <Text textStyle="body" fontSize="sm">📍 Rua Elias Garcia 39, Algualva Cacém</Text>
         </VStack>
 

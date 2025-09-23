@@ -74,12 +74,16 @@ export default function ReservationForm() {
         {/* Botão reservar */}
         <Button
           mt={2}
-          colorScheme="teal"
-          size="lg"
-          w={{ base: "100%", md: "50%" }}
+          bg="#383733"
+          borderColor="#e76d30"
+          color="white"
+          border="2px"
+          size="md"
+          py="2.5"
+          px="4"
           mx="auto"
           borderRadius="full"
-          _hover={{ bg: "teal.600" }}
+          _hover={{ bg: "#e76d30", color: "white" }}
         >
           Reservar mesa
         </Button>

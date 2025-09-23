@@ -8,8 +8,7 @@ import Footer from "./components/Footer";
 // Páginas
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Menu from "./pages/Menu";
-import Reservations from "./pages/Reservations";
+import Flavors from "./pages/Flavors";
 import Contact from "./pages/Contact";
 
 function App() {
@@ -31,8 +30,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/About" element={<About />} />
-            <Route path="/Menu" element={<Menu />} />
-            <Route path="/Reservations" element={<Reservations />} />
+            <Route path="/Menu" element={<Home />} />
+            <Route path="/Flavors" element={<Flavors />} />
             <Route path="/Contact" element={<Contact />} />
           </Routes>
         </Box>

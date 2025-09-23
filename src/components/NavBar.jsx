@@ -41,8 +41,8 @@ export default function NavBar() {
           <ChakraLink as={Link} to="/About" color="white">
             Sobre
           </ChakraLink>
-          <ChakraLink as={Link} to="/Reservations" color="white">
-            Reservas
+          <ChakraLink as={Link} to="/Flavors" color="white">
+            Sabores
           </ChakraLink>
           <ChakraLink as={Link} to="/Contact" color="white">
             Contacto
@@ -91,8 +91,8 @@ export default function NavBar() {
             <ChakraLink as={Link} to="/About" onClick={onClose}>
               Sobre
             </ChakraLink>
-            <ChakraLink as={Link} to="/Reservations" onClick={onClose}>
-              Reservas
+            <ChakraLink as={Link} to="/Flavors" onClick={onClose}>
+              Sabores
             </ChakraLink>
             <ChakraLink as={Link} to="/Contact" onClick={onClose}>
               Contacto

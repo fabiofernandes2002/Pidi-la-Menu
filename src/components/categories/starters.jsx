@@ -46,6 +46,8 @@ export default function Starters() {
   return (
     <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} mt={8}>
       {entradas.map((item, index) => (
+        // Feito com linhas entre os cards
+        // <Card key={index} shadow="none" border="0" borderRadius="0" bg="transparent">
         <Card key={index} shadow="md" border="1px solid #e2e8f0">
           <CardBody>
             <Flex justify="space-between" align="flex-start">
@@ -65,6 +67,8 @@ export default function Starters() {
               </Text>
             </Flex>
           </CardBody>
+          {/* Linha só em baixo das cards */}
+          {/* <Divider borderColor="#e66c30" /> */}
         </Card>
       ))}
     </SimpleGrid>
