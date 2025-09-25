@@ -36,6 +36,7 @@ export default function ReservationForm() {
           <FormControl>
             <FormLabel>Número</FormLabel>
             <Input
+              type="tel"
               placeholder="Número de telefone"
               borderRadius="md"
               focusBorderColor="teal.500"
